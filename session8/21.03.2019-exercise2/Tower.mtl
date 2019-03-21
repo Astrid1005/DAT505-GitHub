@@ -1,0 +1,543 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# 创建的文件:21.03.2019 14:50:20
+
+newmtl Material__129
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\ZHONGXIN.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\ZHONGXIN.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\ZHONGXIN.png
+	bump G:\CG&3DMax\CG&3DMax\talou\ZHONGXIN.png
+
+newmtl Material__165
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuaicemian.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuaicemian.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuaicemian.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuaicemian.png
+
+newmtl Material__109
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\heimuwen.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\heimuwen.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\heimuwen.png
+	bump G:\CG&3DMax\CG&3DMax\talou\heimuwen.png
+
+newmtl Material__108
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\baimuwen.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\baimuwen.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\baimuwen.png
+	bump G:\CG&3DMax\CG&3DMax\talou\baimuwen.png
+
+newmtl Material__110
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+	bump G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+
+newmtl Material__131
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\tiexiu.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\tiexiu.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\tiexiu.png
+	bump G:\CG&3DMax\CG&3DMax\talou\tiexiu.png
+
+newmtl Material__130
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\wuyanneice.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\wuyanneice.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\wuyanneice.png
+	bump G:\CG&3DMax\CG&3DMax\talou\wuyanneice.png
+
+newmtl Material__117
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\hei.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\hei.png
+
+newmtl Material__126
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shibian.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shibian.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shibian.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shibian.png
+
+newmtl Material__127
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shiziqiang.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shiziqiang.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shiziqiang.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shiziqiang.png
+
+newmtl Material__121
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai1.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai1.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai1.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai1.png
+
+newmtl Material__122
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai2.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai2.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai2.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai2.png
+
+newmtl Material__123
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai3.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai3.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai3.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai3.png
+
+newmtl Material__124
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai4.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai4.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai4.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shangbuzhuankuai4.png
+
+newmtl Material__77
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\hei.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\hei.png
+
+newmtl Material__119
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\paotaizhuan.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\paotaizhuan.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\paotaizhuan.png
+	bump G:\CG&3DMax\CG&3DMax\talou\paotaizhuan.png
+
+newmtl Material__111
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\jianci.tga
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\jianci.tga
+	map_d G:\CG&3DMax\CG&3DMax\talou\jianci.tga
+	map_bump G:\CG&3DMax\CG&3DMax\talou\jianci.tga
+	bump G:\CG&3DMax\CG&3DMax\talou\jianci.tga
+
+newmtl Material__128
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shiban.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shiban.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shiban.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shiban.png
+
+newmtl Material__159
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuai1.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuai1.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai1.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai1.png
+
+newmtl Material__160
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuai2.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuai2.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai2.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai2.png
+
+newmtl Material__161
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4.png
+
+newmtl Material__162
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4-2.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4-2.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4-2.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai3&4-2.png
+
+newmtl Material__163
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuai5&6.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuai5&6.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai5&6.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai5&6.png
+
+newmtl Material__164
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\zhuankuai7&8.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\zhuankuai7&8.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai7&8.png
+	bump G:\CG&3DMax\CG&3DMax\talou\zhuankuai7&8.png
+
+newmtl Material__120
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shangbushiqiang.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shangbushiqiang.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shangbushiqiang.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shangbushiqiang.png
+
+newmtl Material__125
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\shizibiaoji.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\shizibiaoji.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\shizibiaoji.png
+	bump G:\CG&3DMax\CG&3DMax\talou\shizibiaoji.png
+
+newmtl Material__114
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\wapian.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\wapian.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\wapian.png
+	bump G:\CG&3DMax\CG&3DMax\talou\wapian.png
+
+newmtl Material__167
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\lan.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\lan.png
+
+newmtl Material__113
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\powuding.tga
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\powuding.tga
+	map_d G:\CG&3DMax\CG&3DMax\talou\powuding.tga
+	map_bump G:\CG&3DMax\CG&3DMax\talou\powuding.tga
+	bump G:\CG&3DMax\CG&3DMax\talou\powuding.tga
+
+newmtl Material__157
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\wudingcemian.tga
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\wudingcemian.tga
+	map_d G:\CG&3DMax\CG&3DMax\talou\wudingcemian.tga
+	map_bump G:\CG&3DMax\CG&3DMax\talou\wudingcemian.tga
+	bump G:\CG&3DMax\CG&3DMax\talou\wudingcemian.tga
+
+newmtl Material__118
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\mutongcemian.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\mutongcemian.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\mutongcemian.png
+	bump G:\CG&3DMax\CG&3DMax\talou\mutongcemian.png
+
+newmtl Material__166
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\loutizhuan.jpg
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\loutizhuan.jpg
+	map_bump G:\CG&3DMax\CG&3DMax\talou\loutizhuan.jpg
+	bump G:\CG&3DMax\CG&3DMax\talou\loutizhuan.jpg
+
+newmtl Material__168
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\louticeqiang.jpg
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\louticeqiang.jpg
+	map_bump G:\CG&3DMax\CG&3DMax\talou\louticeqiang.jpg
+	bump G:\CG&3DMax\CG&3DMax\talou\louticeqiang.jpg
+
+newmtl Material__78
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+	map_Kd G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+	map_bump G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
+	bump G:\CG&3DMax\CG&3DMax\talou\jiantazhuankuai.png
