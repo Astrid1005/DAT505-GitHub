@@ -1,4 +1,4 @@
-# An example which shows that a cone rotates in the middle of the screen
+# A class exercise which needed to change the color and shape of the basic geometry and the color of background.
 
 ## Introduction
 
