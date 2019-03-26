@@ -42,7 +42,7 @@ function init(){
 }
 ```
 
-* This function  creates a cube and basic material firstly. Then the code creates mesh to combines the cube with material. Finally, the code defines the position of the mesh and adds the mesh to scene. In the following code, I changed the basic geometry and the color of geometry.
+* This function  creates a cone and basic material firstly. Then the code creates mesh to combines the cone with material. Finally, the code defines the position of the mesh and adds the mesh to scene. In the following code, I changed the basic geometry and the color of geometry.
 
 ```JavaScript
 function geometry(){
