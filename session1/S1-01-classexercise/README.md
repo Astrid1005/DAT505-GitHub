@@ -104,3 +104,10 @@ render();
    </body>
   </html>
   ```
+
+## The final general view of code
+  <p align="center">
+  <img alt="abramovic" src="assets/cone1.jpg" width="420" />
+  <img alt="abramovic" src="assets/cone2.jpg" width="420" />
+  <img alt="abramovic" src="assets/cone3.jpg" width="420" />
+  </p>
