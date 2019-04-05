@@ -334,5 +334,5 @@ render();
 
   ## The final general view of code
     <p align="center">
-    <img alt="abramovic" src="assets/Homework.jpg" width="420" />
+    <img alt="abramovic" src="assets/Homework.jpg" width="520" />
     </p>
