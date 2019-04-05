@@ -106,7 +106,7 @@ render();
 
 ## The final general view of code
 <p align="center">
-<img alt= src="assets/cube1.png" width="420" />
-<img alt= src="assets/cube2.png" width="420" />
-<img alt= src="assets/cube3.png" width="420" />
+<img alt="abramovic" src="assets/cube1.png" width="420" />
+<img alt="abramovic" src="assets/cube2.png" width="420" />
+<img alt="abramovic" src="assets/cube3.png" width="420" />
 </p>
