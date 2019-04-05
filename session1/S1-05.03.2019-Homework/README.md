@@ -332,9 +332,7 @@ render();
   </html>
   ```
 
-  ## The final general view of code
+## The final general view of code
     <p align="center">
     <img alt="abramovic" src="assets/homework1.jpg" width="420" />
-    <img alt="abramovic" src="assets/homework2.jpg" width="420" />
-    <img alt="abramovic" src="assets/homework3.jpg" width="420" />
     </p>
