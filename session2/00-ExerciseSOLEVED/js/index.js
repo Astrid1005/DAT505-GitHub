@@ -56,7 +56,6 @@ var material = new THREE.MeshLambertMaterial({
 //var material = new THREE.MeshPhongMaterial({shininess: 1});
 
 //MATERIAL 5 (non-shiny material):
-
 var material = new THREE.MeshLambertMaterial({
   color: '#D2BE82',
   lightMap: null,
