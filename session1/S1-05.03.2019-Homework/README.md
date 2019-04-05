@@ -331,3 +331,8 @@ render();
    </body>
   </html>
   ```
+
+  ## The final general view of code
+    <p align="center">
+    <img alt="abramovic" src="assets/05.03.19-Homework.jpg" width="420" />
+    </p>
