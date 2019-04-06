@@ -40,7 +40,7 @@ scene.add(light2);
 
 ```
 
-* The following code creates basic geometry and basic material firstly. Then the code creates meshes to combines the geometries with material. Finally, the code defines the position of the meshes and adds the meshes to scene.
+* The following code creates basic geometry and basic material firstly. Then the code creates meshes to combine the geometries with material. Finally, the code defines the position of the meshes and adds the meshes to scene.
 
 ```JavaScript
 // Create a Cube Mesh with basic material ---------
