@@ -306,6 +306,6 @@ render(); //Run the function render
 
 ## The final general view of code
 <p align="center">
-<img alt="abramovic" src="assets/cubes1.jpg" width="420" />
-<img alt="abramovic" src="assets/cubes2.jpg" width="420" />
+<img alt="abramovic" src="assets/box1.jpg" width="420" />
+<img alt="abramovic" src="assets/box2.jpg" width="420" />
 </p>
