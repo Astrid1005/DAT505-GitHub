@@ -93,7 +93,7 @@ render();
 
 #### This part explains the code used for the **index.html**
 
-* The following code imports **three.js** and **index.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.min.js** is found in the **Library**.
+* The following code imports **three.min.js** and **index.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.min.js** is found in the **Library**.
 
 ```JavaScript
 <!DOCTYPE html>
