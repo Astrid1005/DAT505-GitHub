@@ -162,7 +162,7 @@ function initGui() {
 }
 ```
 
-#### This part explains the code used for the **index.html**
+#### This part shows the code used for the **index.html**
 
 * The following code imports **three.js**, **index.js**, **OrbitControls.js**, **WebGL.js**, **stats.min.js**, **dat.gui.min.js**, **LineSegmentsGeometry.js**, **LineGeometry.js**, **WireframeGeometry2.js**, **LineMaterial.js**, **LineSegments2.js**, **Line2.js**, **Wireframe.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.js**, **OrbitControls.js**, **WebGL.js**, **stats.min.js**, **dat.gui.min.js**, **LineSegmentsGeometry.js**, **LineGeometry.js**, **WireframeGeometry2.js**, **LineMaterial.js**, **LineSegments2.js**, **Line2.js**, **Wireframe.js** are found in the **Library**.
 
