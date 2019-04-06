@@ -60,7 +60,7 @@ function init(){
 
 ```
 
-* This function creates many different kinds of basic geometries and basic material firstly. Then the code creates meshes to combines the geometries with material. Finally, the code defines the position of the meshes and adds the meshes to scene. In the following code, I changed the basic geometry and the color of geometry.
+* This function creates many different kinds of basic geometries and basic material firstly. Then the code creates meshes to combine the geometries with material. Finally, the code defines the position of the meshes and adds the meshes to scene. In the following code, I changed the basic geometry and the color of geometry.
 
 ```JavaScript
 function geometry(){
@@ -302,7 +302,7 @@ var render = function () {
 };
 ```
 
-* Adds functions
+* Run function render
 
 ```JavaScript
 init();

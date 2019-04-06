@@ -42,7 +42,7 @@ function init(){
 }
 ```
 
-* This function  creates a cube and basic material firstly. Then the code creates mesh to combines the cube with material. Finally, the code defines the position of the mesh and adds the mesh to scene.
+* This function  creates a cube and basic material firstly. Then the code creates mesh to combine the cube with material. Finally, the code defines the position of the mesh and adds the mesh to scene.
 
 ```JavaScript
 function geometry(){
@@ -74,7 +74,7 @@ var render = function () {
 };
 ```
 
-* Adds functions
+* Run function render
 
 ```JavaScript
 init();

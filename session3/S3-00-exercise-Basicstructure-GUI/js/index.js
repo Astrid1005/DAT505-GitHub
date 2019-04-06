@@ -20,12 +20,9 @@ function init(){
 
   // Append Renderer to DOM
   document.body.appendChild( renderer.domElement );
-/*}
 
-function geometry(){*/
   // Create a Cube Mesh with basic material ---------
   geometry = new THREE.BoxGeometry(100, 100, 100);
-  //material = new THREE.MeshBasicMaterial( { color: "#00FFFF" } );
   material = new THREE.MeshBasicMaterial( { color: 0xffaa00, wireframe: true } );
 
   mesh = new THREE.Mesh( geometry, material );
@@ -63,61 +60,51 @@ function geometry(){*/
     mesh.scale.x = (controller.scaleX);
   });
 
+  //Add the first controller {scale y}
+  f1.add(controller,'scaleY',0.1,5).onChange(function(){
+    mesh.scale.y = (controller.scaleY);
+  });
 
-  //Define the folder name
-    //var f1 = gui.addFolder('Scaley');
-    //Add the first controller {scale y}
-    f1.add(controller,'scaleY',0.1,5).onChange(function(){
-      mesh.scale.y = (controller.scaleY);
-    });
+  //Add the first controller {scale z}
+  f1.add(controller,'scaleZ',0.1,5).onChange(function(){
+    mesh.scale.z = (controller.scaleZ);
+  });
 
-
-    //Define the folder name
-      //var f1 = gui.addFolder('Scalez');
-      //Add the first controller {scale z}
-      f1.add(controller,'scaleZ',0.1,5).onChange(function(){
-        mesh.scale.z = (controller.scaleZ);
-      });
-
-    //Add the Second controller {position x}
-      f2.add(controller,'positionX',-500,500).onChange(function(){
-        mesh.position.x = (controller.positionX);
-      });
+  //Add the Second controller {position x}
+  f2.add(controller,'positionX',-500,500).onChange(function(){
+    mesh.position.x = (controller.positionX);
+  });
 
 
-      //Add the Second controller {position y}
-        f2.add(controller,'positionY',-500,500).onChange(function(){
-          mesh.position.y = (controller.positionY);
-        });
+  //Add the Second controller {position y}
+  f2.add(controller,'positionY',-500,500).onChange(function(){
+    mesh.position.y = (controller.positionY);
+  });
 
+  //Add the Second controller {position z}
+  f2.add(controller,'positionZ',-5000,-400).onChange(function(){
+    mesh.position.z = (controller.positionZ);
+  });
 
-        //Add the Second controller {position z}
-          f2.add(controller,'positionZ',-5000,-400).onChange(function(){
-            mesh.position.z = (controller.positionZ);
-          });
+  //Add the Third controller {rotation x}
+  f3.add(controller,'rotationX',-3.14,3.14).onChange(function(){
+    mesh.rotation.x = (controller.rotationX);
+  });
 
+  //Add the Third controller {rotation y}
+  f3.add(controller,'rotationY',-3.14,3.14).onChange(function(){
+    mesh.rotation.y = (controller.rotationY);
+  });
 
-          f3.add(controller,'rotationX',-3.14,3.14).onChange(function(){
-            mesh.rotation.x = (controller.rotationX);
-          });
-
-
-          f3.add(controller,'rotationY',-3.14,3.14).onChange(function(){
-            mesh.rotation.y = (controller.rotationY);
-          });
-
-
-          f3.add(controller,'rotationZ',-3.14,3.14).onChange(function(){
-            mesh.rotation.z = (controller.rotationZ);
-          });
+  //Add the Third controller {rotation z}
+  f3.add(controller,'rotationZ',-3.14,3.14).onChange(function(){
+    mesh.rotation.z = (controller.rotationZ);
+  });
 }
 
 // Render Loop
 var render = function () {
   requestAnimationFrame( render );
-
-  //mesh.rotation.x += 0.01; //Continuously rotate the mesh
-  //mesh.rotation.y += 0.01;
 
   renderer.setClearColor("#000000");
 
@@ -126,5 +113,4 @@ var render = function () {
 };
 
 init();
-//geometry();
 render();
