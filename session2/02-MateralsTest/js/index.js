@@ -28,37 +28,30 @@ scene.add(light1);
 var light2 = new THREE.PointLight(0xffffff, 0.5);
 scene.add(light2);
 // ------------------------------------------------
-
-// -----------------------------------------------------------------------------
-
 // ------------------------------------------------
 // Main Content
 // ------------------------------------------------
-
 // Create a Cube Mesh with basic material ---------
 var geometry = new THREE.BoxGeometry(100, 100, 100);
 
-// MATERIAL 1:
-//var material = new THREE.MeshBasicMaterial( { color: "#433F81" } );
+// MATERIAL 0:
+var material0 = new THREE.MeshNormalMaterial();
+
+//MATERIAL 1:
+var material1 = new THREE.MeshBasicMaterial( { color: "#433F81" } );
 
 //MATERIAL 2:
-//var material = new THREE.MeshNormalMaterial();
-
-//MATERIAL 3:
-/*
-var material = new THREE.MeshLambertMaterial({
+var material2 = new THREE.MeshLambertMaterial({
   color: "#433F81",
   transparent: true,
   opacity: 1
 });
-*/
+
+//MATERIAL 3:
+var material3 = new THREE.MeshPhongMaterial({shininess: 1});
 
 //MATERIAL 4:
-//var material = new THREE.MeshPhongMaterial({shininess: 1});
-
-//MATERIAL 5 (non-shiny material):
-
-var material2 = new THREE.MeshLambertMaterial({
+var material4 = new THREE.MeshLambertMaterial({
   color: '#D2BE82',
   lightMap: null,
   lightMapIntensity: 1,
@@ -68,24 +61,7 @@ var material2 = new THREE.MeshLambertMaterial({
   specularMap: null
 });
 
-//重复复制了，并不需要
-// Configure lights -------------------------------
-  /*var light1 = new THREE.AmbientLight(0xffffff, 0.5);
-  scene.add(light1);
-
-  var light2 = new THREE.PointLight(0xffffff, 0.5);
-  scene.add(light2);*/
-  //重复复制了，并不需要
-
-//重复复制了，并不需要
-  // Create a Cube Mesh with basic material ---------
-  //var geometry = new THREE.BoxGeometry(100, 100, 100);
-  //重复复制了，并不需要
-
-var material = new THREE.MeshNormalMaterial();
-
-
-//MATERIAL 5 (shiny material):
+//MATERIAL 5:
 var material5 = new THREE.MeshPhongMaterial({
   color: 0xF3FFE2,
   specular: 0xffffff,
@@ -102,17 +78,14 @@ var material5 = new THREE.MeshPhongMaterial({
   specularMap: null
 });
 
-
-//MATERIAL 6 (combination of shiny + non-shinny):
+//MATERIAL 6:
 var material6 = new THREE.MeshStandardMaterial({
   color: 0xF3FFE2,
   roughness: 0.5,
   metalness: 0.5
 });
 
-
-
-//MATERIAL 7 (physical-based material)
+//MATERIAL 7:
 var material7 = new THREE.MeshPhysicalMaterial({
   color: 0xF3FFE2,
   roughness: 0,
@@ -122,98 +95,91 @@ var material7 = new THREE.MeshPhysicalMaterial({
   claerCoatRoughness: 0
 });
 
+//MATERIAL 8:
+var material8 = new THREE.PointsMaterial( { color: 0x888888 } );
 
-//MATERIAL 8
-var material8 = new THREE.LineBasicMaterial( {
-	color: 0xffffff,
-	linewidth: 1,
-	linecap: 'round', //ignored by WebGLRenderer
-	linejoin:  'round' //ignored by WebGLRenderer
-} );
+//MATERIAL 9:
+var material9 =  new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: true, blending: THREE.AdditiveBlending } );
 
-//MATERIAL 9
-var material9 = new THREE.LineDashedMaterial( {
-	color: 0xffffff,
-	linewidth: 1,
-	scale: 1,
-	dashSize: 3,
-	gapSize: 1,
-} );
+//MATERIAL 10:
+var material10 =  new THREE.MeshBasicMaterial( { color: 0xffaa00, wireframe: true } );
 
-//MATERIAL 10
+//MATERIAL 11:
+var material11 =  new THREE.MeshLambertMaterial( { color: 0x666666, emissive: 0xff0000 } );
 
-var material10 = new THREE.PointsMaterial( { color: 0x888888 } );
+//MATERIAL 12:
+var material12 =  new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0xff0000, shininess: 10, opacity: 0.9, transparent: true } );
 
-//MATERIAL 11
-var material11 =  new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: true, blending: THREE.AdditiveBlending } );
+//MATERIAL13:
+var material13 =  new THREE.MeshDepthMaterial();
 
-//MATERIAL 12
-var material12 =  new THREE.MeshBasicMaterial( { color: 0xffaa00, wireframe: true } );
-
-//MATERIAL13
-var material13 =  new THREE.MeshLambertMaterial( { color: 0x666666, emissive: 0xff0000 } );
-
-//MATERIAL 14
-var material14 =  new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0xff0000, shininess: 10, opacity: 0.9, transparent: true } );
-
-//MATERIAL 15
-var material15 =  new THREE.MeshDepthMaterial();
-
-var mesh1 = new THREE.Mesh( geometry, material2 );
+//creat mesh1 to combine geometry with material0
+var mesh1 = new THREE.Mesh( geometry, material0 );
 mesh1.position.z = -1000;
 mesh1.position.y = 100;
 
-var mesh2 = new THREE.Mesh( geometry, material8 );
+//creat mesh2 to combine geometry with material1
+var mesh2 = new THREE.Mesh( geometry, material1 );
 mesh2.position.z = -1000;
 mesh2.position.x = -100;
 mesh2.position.y = 200;
 
-var mesh3 = new THREE.Mesh( geometry, material7 );
+//creat mesh3 to combine geometry with material2
+var mesh3 = new THREE.Mesh( geometry, material2 );
 mesh3.position.z = -1000;
 mesh3.position.x = -200;
 mesh3.position.y = 100;
 
-var mesh4 = new THREE.Mesh( geometry, material6 );
+//creat mesh4 to combine geometry with material3
+var mesh4 = new THREE.Mesh( geometry, material3 );
 mesh4.position.z = -1000;
 mesh4.position.x = 100;
 mesh4.position.y = 200;
 
-var mesh5 = new THREE.Mesh( geometry, material5 );
+//creat mesh5 to combine geometry with material4
+var mesh5 = new THREE.Mesh( geometry, material4 );
 mesh5.position.z = -1000;
 mesh5.position.x = 200;
 mesh5.position.y = 100;
 
-var mesh6 = new THREE.Mesh( geometry, material15 );
+//creat mesh6 to combine geometry with material5
+var mesh6 = new THREE.Mesh( geometry, material5 );
 mesh6.position.z = -1000;
 mesh6.position.x = 0;
 mesh6.position.y = -100;
 
-var mesh7 = new THREE.Mesh( geometry, material9 );
+//creat mesh7 to combine geometry with material6
+var mesh7 = new THREE.Mesh( geometry, material6 );
 mesh7.position.z = -1000;
 mesh7.position.x = -100;
 mesh7.position.y = 0;
 
-var mesh8 = new THREE.Mesh( geometry, material10 );
+//creat mesh8 to combine geometry with material7
+var mesh8 = new THREE.Mesh( geometry, material7 );
 mesh8.position.z = -1000;
 mesh8.position.x = -200;
 mesh8.position.y = -100;
 
-var mesh9 = new THREE.Mesh( geometry, material11 );
+//creat mesh9 to combine geometry with material8
+var mesh9 = new THREE.Mesh( geometry, material8 );
 mesh9.position.z = -1000;
 mesh9.position.x = 100;
 mesh9.position.y = 0;
 
-var mesh10 = new THREE.Mesh( geometry, material12 );
+//creat mesh10 to combine geometry with material9
+var mesh10 = new THREE.Mesh( geometry, material9 );
 mesh10.position.z = -1000;
 mesh10.position.x = 200;
 mesh10.position.y = -100;
 
-var mesh11 = new THREE.Mesh( geometry, material13 );
+//creat mesh11 to combine geometry with material10
+var mesh11 = new THREE.Mesh( geometry, material10 );
 mesh11.position.z = -1000;
 mesh11.position.x = -100;
 mesh11.position.y = -200;
 
-var mesh12 = new THREE.Mesh( geometry, material14 );
+//creat mesh12 to combine geometry with material11
+var mesh12 = new THREE.Mesh( geometry, material11 );
 mesh12.position.z = -1000;
 mesh12.position.x = 100;
 mesh12.position.y = -200;
