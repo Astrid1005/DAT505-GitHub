@@ -13,7 +13,7 @@ The project is an example which shows that many cubes rotate in different direct
 * The following code creates an empty scene, a basic perspective camera, a renderer, light1, light2. This renderer configures the color of background and the size of window.
 
 ```JavaScript
-/ Create an empty scene --------------------------
+// Create an empty scene --------------------------
 var scene = new THREE.Scene();
 
 // Create a basic perspective camera --------------
@@ -216,6 +216,8 @@ render(); //Run the function render
   </body>
 </html>
   ```
+
+---
 
 ## The final general view of code
 <p align="center">

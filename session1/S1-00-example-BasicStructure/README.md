@@ -104,6 +104,8 @@ render();
   </html>
   ```
 
+---
+
 ## The final general view of code
 <p align="center">
 <img alt="abramovic" src="assets/cube1.jpg" width="420" />
