@@ -45,7 +45,7 @@ renderer.setClearColor(0x17293a);
 renderer.setSize(W, H);
 //renderer.shadowMapEnabled = true;
 
-controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate the view
 ```
 
 * The following code creates a two dimensional grid of objects, and position them accordingly in the scene firstly. Secondly, the code makes each object have random  color. Thirdly, the code creates mesh to combine the objects with materials. Finally, the code defines the position and random rotation of mesh and adds the mesh to scene, meanwhile the code pushes mesh to **cubes**.
