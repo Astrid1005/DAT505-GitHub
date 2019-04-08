@@ -63,7 +63,7 @@ else {
   boxMaterial = new THREE.MeshLambertMaterial({color:  0xFFFFFF});
 }
 
-              //The each cube's rotation is random
+              //The mesh's rotation is random
     					var mesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
     						mesh.position.x = x; //set the mesh
@@ -74,8 +74,8 @@ else {
                 mesh.rotation.y = Math.random() * 2 * Math.PI; //The rotation of y is random
                 mesh.rotation.z = Math.random() * 2 * Math.PI; //The rotation of z is random
 
-             var randomValueX = (Math.random() * 0.01) - 0.05; //set a appropriate randomValueX
-             var randomValueY = (Math.random() * 0.01) - 0.05; //set a appropriate randomValueY
+             var randomValueX = (Math.random() * 0.1) - 0.05; //set a appropriate randomValueX
+             var randomValueY = (Math.random() * 0.1) - 0.05; //set a appropriate randomValueY
              randomRotationX.push(randomValueX); //push randomValueX into randomRotationX
              randomRotationY.push(randomValueY); //push randomValueY into randomRotationY
 
