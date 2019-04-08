@@ -4,8 +4,6 @@ var cubes = [];
 var randomRotationX = [];
 var randomRotationY = [];
 
-
-
 function init() {
 
   console.log("Init Function Starts");
@@ -34,77 +32,64 @@ function init() {
   renderer.setSize(W, H);
   //renderer.shadowMapEnabled = true;
 
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate the view
 
-
-for (var x = -10; x <= 10; x += 5 ) {// Start from -45 and sequentially add one every 5 pixels
+//Create a two dimensional grid of objects, and position them accordingly
+for (var x = -10; x <= 10; x += 5 ) {// Start from -10 and sequentially add one every 5 pixels
   for (var y = -10; y <= 10; y += 5) {
     var boxGeometry = new THREE.BoxGeometry( 3, 3, 3 );
-//Concatenation of the x and y values (open Console to see)
+
+    //Concatenation of the x and y values (open Console to see)
     console.log("X:" +x+ ", Y: " +y);
-    //The color of the material is assigned a random color
 
-    var texture1 = new THREE.TextureLoader().load("textures/texture" + Math.floor(Math.random()*15) + ".jpg");
-    //var texture2 = new THREE.TextureLoader().load("textures/texture" + Math.floor(Math.random()*15) + ".jpg");
-    //var texture3 = new THREE.TextureLoader().load("textures/texture" + Math.floor(Math.random()*15) + ".jpg");
+//make texture load random pictures
+    var texture = new THREE.TextureLoader().load("textures/texture" + Math.floor(Math.random()*15) + ".jpg");
 
-    var boxMaterial = new THREE.MeshBasicMaterial({ map: texture1 });
+//give texture for material
+    var boxMaterial = new THREE.MeshBasicMaterial({ map: texture });
 
-/*if (x==-5 && y==-5){
-  boxMaterial = new THREE.MeshBasicMaterial({ map: texture1 });
-} else if (x==5 && y==5){
-  boxMaterial = new THREE.MeshBasicMaterial({ map: texture2 });
-} else {
-  boxMaterial = new THREE.MeshBasicMaterial({ map: texture3 });
-}*/
-
-
+              //The mesh's rotation is random
     					var mesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
-    						mesh.position.x = x;
-    						mesh.position.y = y;
-                //mesh.position.z = z;
-                mesh.scale.y = 1;
+    						mesh.position.x = x; //set the mesh
+    						mesh.position.y = y;//set the mesh
+                mesh.scale.y = 1;   //set the scale of mesh
 
-    						mesh.rotation.x = Math.random() * 2 * Math.PI;
-                mesh.rotation.y = Math.random() * 2 * Math.PI;
-                mesh.rotation.z = Math.random() * 2 * Math.PI;
+    						mesh.rotation.x = Math.random() * 2 * Math.PI; //The rotation of x is random
+                mesh.rotation.y = Math.random() * 2 * Math.PI; //The rotation of y is random
+                mesh.rotation.z = Math.random() * 2 * Math.PI; //The rotation of z is random
 
-             var randomValueX = (Math.random() * 0.01) - 0.05;
-             var randomValueY = (Math.random() * 0.01) - 0.05;
-             randomRotationX.push(randomValueX);
-             randomRotationY.push(randomValueY);
+             var randomValueX = (Math.random() * 0.1) - 0.05; //set a appropriate randomValueX
+             var randomValueY = (Math.random() * 0.1) - 0.05; //set a appropriate randomValueY
+             randomRotationX.push(randomValueX); //push randomValueX into randomRotationX
+             randomRotationY.push(randomValueY); //push randomValueX into randomRotationY
 
-
+                //add mesh in the scene
     						scene.add( mesh );
+                //push mesh in the cubes
                 cubes.push(mesh);
 
-
 }
 }
 
+//open Console to see
 console.log(cubes);
-//console.log(randomRotationX);
+//console.log(randomRotationX); //show random data
 console.log("Init end");
 console.log("****** DrawFrame Starts ******");
 document.body.appendChild(renderer.domElement);
 
-
 }
 
+//render loop
 function drawFrame(){
   requestAnimationFrame(drawFrame);
 
   //forEach takes all the arrary entries and passes the c as the ...
   cubes.forEach(function(c, i){
 
-    c.rotation.x += randomRotationX[i]; //Roate the object that is reference...
-    c.rotation.y += randomRotationY[i];
-
-//c.rotation.x = 0.2; //Roate the object that is reference...
-//c.rotation.y = 0.5;
-
-
+    c.rotation.x += randomRotationX[i]; //Roate the object
+    c.rotation.y += randomRotationY[i]; //Roate the object
 
 });
 

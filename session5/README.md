@@ -28,6 +28,6 @@ The project is an exercise which required me to creat a two dimensional grid of 
 
 * S5-05-exercise-random-14.03.19
 
-
+The project is an exercise which required me to creat a two dimensional grid of objects, and position them accordingly in the scene. Then the exercise also required me to make the all objects be in random rotation and random speed, meanwhile all objects needed to have random material.
 
 ---
