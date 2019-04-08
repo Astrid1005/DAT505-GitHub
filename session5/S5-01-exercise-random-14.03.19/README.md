@@ -52,7 +52,7 @@ renderer.setSize(W, H);
 controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate the view
 ```
 
-* The following code creates a two dimensional grid of objects, and position them accordingly in the scene firstly. Secondly, the code makes each object have random  color. Thirdly, the code creates mesh to combine the objects with materials. Fourthly, the code defines the position and random rotation of mesh. Fifthly, the code set randomValueX and randomValueY, meanwhile the code pushes randomValueX in **randomRotationX** and pushes randomValueY in **randomRotationY**. Finally, the code adds the mesh to scene and pushes mesh to **cubes**.
+* The following code creates a two dimensional grid of objects, and position them accordingly in the scene firstly. Secondly, the code makes each object have random  color. Thirdly, the code creates mesh to combine the objects with materials. Fourthly, the code defines the position and random rotation of mesh. Fifthly, the code sets randomValueX and randomValueY, meanwhile the code pushes randomValueX in **randomRotationX** and pushes randomValueY in **randomRotationY**. Finally, the code adds the mesh to scene and pushes mesh to **cubes**.
 
 ```JavaScript
 //Create a two dimensional grid of objects, and position them accordingly

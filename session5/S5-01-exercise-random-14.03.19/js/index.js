@@ -35,7 +35,7 @@ function init() {
   controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate the view
 
 //Create a two dimensional grid of objects, and position them accordingly
-for (var x = -47.5; x <= 47.5; x += 5 ) {// Start from -45 and sequentially add one every 5 pixels
+for (var x = -47.5; x <= 47.5; x += 5 ) {// Start from -47.5 and sequentially add one every 5 pixels
   for (var y = -47.5; y <= 47.5; y += 5) {
     var boxGeometry = new THREE.BoxGeometry(3, 3, 3);
 
