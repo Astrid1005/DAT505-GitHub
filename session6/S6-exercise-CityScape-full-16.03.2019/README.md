@@ -4,6 +4,11 @@
 
 The project is an exercise which required me to creat a view of scene likes the following pictures were given by teacher. Then I created a lot of motionless wireframe white cubes to simulate the view of the pictures. People can have a first person view in this project. They can move the mouse to control the view to see the whole scene.
 
+<p align="center">
+<img alt="abramovic" src="assets/example1.jpg" width="420" />
+<img alt="abramovic" src="assets/example2.jpg" width="420" />
+</p>
+
 ---
 
 ## Code
