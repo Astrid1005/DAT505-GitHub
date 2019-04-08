@@ -53,42 +53,14 @@ var material2 = new THREE.MeshBasicMaterial({map : texture});
 //MATERIAL 3:
 var material3 = new THREE.MeshNormalMaterial();
 
-//MATERIAL 4:
+//MATERIAL 4
+material4 = new THREE.MeshLambertMaterial( { color: 0x666666, emissive: 0xff0000 } );
 
+//MATERIAL 5
+var material5 =  new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0xff0000, shininess: 10, opacity: 0.9, transparent: true } );
 
-//MATERIAL 5 (non-shiny material):
-
-
-//MATERIAL 6 (combination of shiny + non-shinny):
-
-
-//MATERIAL 7 (physical-based material)
-
-
-//MATERIAL 8
-
-
-//MATERIAL 9
-
-
-//MATERIAL 10
-
-
-//MATERIAL 11
-material11 = new THREE.MeshLambertMaterial( { color: 0x666666, emissive: 0xff0000 } );
-
-//MATERIAL 12
-var material12 =  new THREE.MeshBasicMaterial( { color: 0xffaa00, wireframe: true } );
-
-//MATERIAL13
-
-
-//MATERIAL 14
-var material14 =  new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0xff0000, shininess: 10, opacity: 0.9, transparent: true } );
-
-//MATERIAL 15
-
-
+//Mesh with material
+//set position of Mesh
 var mesh1 = new THREE.Mesh( geometry1, material2 );
 mesh1.position.z = -1000;
 mesh1.position.x = 0;
@@ -104,42 +76,42 @@ mesh3.position.z = -1400;
 mesh3.position.x = 0;
 mesh3.position.y = 0;
 
-var mesh4 = new THREE.Mesh( geometry4, material11 );
+var mesh4 = new THREE.Mesh( geometry4, material4 );
 mesh4.position.z = -1000;
 mesh4.position.x = 0;
 mesh4.position.y = 75;
 
-var mesh5 = new THREE.Mesh( geometry4, material11 );
+var mesh5 = new THREE.Mesh( geometry4, material4 );
 mesh5.position.z = -1000;
 mesh5.position.x = 0;
 mesh5.position.y = -75;
 
-var mesh6 = new THREE.Mesh( geometry4, material11 );
+var mesh6 = new THREE.Mesh( geometry4, material4 );
 mesh6.position.z = -1000;
 mesh6.position.x = 75;
 mesh6.position.y = 0;
 
-var mesh7 = new THREE.Mesh( geometry4, material11 );
+var mesh7 = new THREE.Mesh( geometry4, material4 );
 mesh7.position.z = -1000;
 mesh7.position.x = -75;
 mesh7.position.y = 0;
 
-var mesh8 = new THREE.Mesh( geometry4, material14 );
+var mesh8 = new THREE.Mesh( geometry4, material5 );
 mesh8.position.z = -1000;
 mesh8.position.x = -37.5;
 mesh8.position.y = 37.5;
 
-var mesh9 = new THREE.Mesh( geometry4, material14 );
+var mesh9 = new THREE.Mesh( geometry4, material5 );
 mesh9.position.z = -1000;
 mesh9.position.x = -37.5;
 mesh9.position.y = -37.5;
 
-var mesh10 = new THREE.Mesh( geometry4, material14 );
+var mesh10 = new THREE.Mesh( geometry4, material5 );
 mesh10.position.z = -1000;
 mesh10.position.x = 37.5;
 mesh10.position.y = 37.5;
 
-var mesh11 = new THREE.Mesh( geometry4, material14 );
+var mesh11 = new THREE.Mesh( geometry4, material5 );
 mesh11.position.z = -1000;
 mesh11.position.x = 37.5;
 mesh11.position.y = -37.5;
@@ -184,15 +156,15 @@ mesh19.position.z = -1100;
 mesh19.position.x = 0;
 mesh19.position.y = 140;
 
-var mesh20 = new THREE.Mesh( geometry5, material11 );
+var mesh20 = new THREE.Mesh( geometry5, material4 );
 mesh20.position.z = -1300;
 mesh20.position.x = 0;
 mesh20.position.y = 0;
 
-var mesh21 = new THREE.Mesh( geometry6, material14 );
+var mesh21 = new THREE.Mesh( geometry6, material5 );
 mesh21.position.z = -1500;
-//mesh21.position.x = 0;
-//mesh21.position.y = 0;
+mesh21.position.x = 0;
+mesh21.position.y = 0;
 // ------------------------------------------------
 
 // Add mesh to scene
@@ -226,72 +198,68 @@ var render = function () {
 
   rot += 0.01;
 
-  //mesh1.rotation.x = rot+1; //Continuously rotate the mesh
-  //mesh1.rotation.y = rot+1;
+  //Continuously rotate the mesh
   mesh1.rotation.z = rot+1;
 
+  //Continuously rotate the mesh
+  mesh2.rotation.z = -rot;
 
-  //mesh2.rotation.x = rot-2; //Continuously rotate the mesh
-  //mesh2.rotation.y = rot-2;
-mesh2.rotation.z = -rot;
+  //Continuously rotate the mesh
+  mesh3.rotation.z = rot+1;
 
-  //mesh3.rotation.x = rot+2; //Continuously rotate the mesh
-  //mesh3.rotation.y = rot+2;
-mesh3.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh4.rotation.z = rot+1;
 
-  //mesh4.rotation.x = rot-2; //Continuously rotate the mesh
-  //mesh4.rotation.y = rot-2;
-mesh4.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh5.rotation.z = rot+1;
 
-  //mesh5.rotation.x = rot+2; //Continuously rotate the mesh
-  //mesh5.rotation.y = rot+2;
-mesh5.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh6.rotation.z = rot+1;
 
-  //mesh6.rotation.x = rot-2; //Continuously rotate the mesh
-  //mesh6.rotation.y = rot-2;
-mesh6.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh7.rotation.z = rot+1;
 
-  //mesh7.rotation.x = rot+2; //Continuously rotate the mesh
-  //mesh7.rotation.y = rot+2;
-mesh7.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh8.rotation.z = rot+1;
 
-  //mesh8.rotation.x = rot-2; //Continuously rotate the mesh
-  //mesh8.rotation.y = rot-2;
-mesh8.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh9.rotation.z = rot+1;
 
-  //mesh9.rotation.x = rot+2; //Continuously rotate the mesh
-  //mesh9.rotation.y = rot+2;
-mesh9.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh10.rotation.z = rot+1;
 
-  //mesh10.rotation.x = rot-2; //Continuously rotate the mesh
-  //mesh10.rotation.y = rot-2;
-mesh10.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh11.rotation.z = rot+1;
 
-  //mesh11.rotation.x = rot+2; //Continuously rotate the mesh
-  //mesh11.rotation.y = rot+2;
-mesh11.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh12.rotation.z = rot+1;
 
-  //mesh12.rotation.x = rot-2; //Continuously rotate the mesh
-  //mesh12.rotation.y = rot-2;
-mesh12.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh13.rotation.z = rot+1;
 
-mesh13.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh14.rotation.z = rot+1;
 
-mesh14.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh15.rotation.z = rot+1;
 
-mesh15.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh16.rotation.z = rot+1;
 
-mesh16.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh17.rotation.z = rot+1;
 
-mesh17.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh18.rotation.z = rot+1;
 
-mesh18.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh19.rotation.z = rot+1;
 
-mesh19.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh20.rotation.z = rot+1;
 
-mesh20.rotation.z = rot+1;
-
-mesh21.rotation.z = rot+1;
+  //Continuously rotate the mesh
+  mesh21.rotation.z = rot+1;
 
   // Render the scene
   renderer.render(scene, camera);
