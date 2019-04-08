@@ -45,7 +45,7 @@ for (var x = -10; x <= 10; x += 5 ) {// Start from -10 and sequentially add one 
     //The color of the material is assigned a random color
     var boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
 
-//give random color to the specified position
+//give random color to the special position
 if (x==-5 && y==-5){
   boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
 } else if (x==5 && y==5){
@@ -94,11 +94,11 @@ function drawFrame(){
   //forEach takes all the arrary entries and passes the c as the ...
   cubes.forEach(function(c, i){
 
-cubes[6].rotation.x += randomRotationX[6]; //Roate the specified object
-cubes[6].rotation.y += randomRotationY[6]; //Roate the specified objects
+cubes[6].rotation.x += randomRotationX[6]; //Roate the special object
+cubes[6].rotation.y += randomRotationY[6]; //Roate the special objects
 
-cubes[18].rotation.x += randomRotationX[18]; //Roate the specified object
-cubes[18].rotation.y += randomRotationY[18]; //Roate the specified object
+cubes[18].rotation.x += randomRotationX[18]; //Roate the special object
+cubes[18].rotation.y += randomRotationY[18]; //Roate the special object
 
 });
 

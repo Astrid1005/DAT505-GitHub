@@ -4,8 +4,6 @@ var cubes = [];
 var randomRotationX = [];
 var randomRotationY = [];
 
-
-
 function init() {
 
   console.log("Init Function Starts");
@@ -34,18 +32,20 @@ function init() {
   renderer.setSize(W, H);
   //renderer.shadowMapEnabled = true;
 
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate the view
 
-
-for (var x = -10; x <= 10; x += 5 ) {// Start from -45 and sequentially add one every 5 pixels
+//Create a two dimensional grid of objects, and position them accordingly
+for (var x = -10; x <= 10; x += 5 ) {// Start from -10 and sequentially add one every 5 pixels
   for (var y = -10; y <= 10; y += 5) {
-    var boxGeometry = new THREE.ConeBufferGeometry( 2, 10, 20 );
-//Concatenation of the x and y values (open Console to see)
+    var boxGeometry = new THREE.TorusBufferGeometry( 80, 3, 20, 100 );
+
+    //Concatenation of the x and y values (open Console to see)
     console.log("X:" +x+ ", Y: " +y);
-    //The color of the material is assigned a random color
-    //var boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
+
+//The color of the material is assigned a random color
 var boxMaterial = new THREE.MeshLambertMaterial({color:  0xFFFFFF});
 
+//give random color to the special position
 if (x==-5 && y==-5){
   boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
 } else if (x==5 && y==5){
@@ -63,88 +63,77 @@ else {
   boxMaterial = new THREE.MeshLambertMaterial({color:  0xFFFFFF});
 }
 
-
+              //The each cube's rotation is random
     					var mesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
-    						mesh.position.x = x;
-    						mesh.position.y = y;
-                //mesh.position.z = z;
-                mesh.scale.y = 0.5;
+    						mesh.position.x = x; //set the mesh
+    						mesh.position.y = y; //set the mesh
+                mesh.scale.y = 0.5;  //set the scale of mesh
 
-    						mesh.rotation.x = Math.random() * 2 * Math.PI;
-                mesh.rotation.y = Math.random() * 2 * Math.PI;
-                mesh.rotation.z = Math.random() * 2 * Math.PI;
+    						mesh.rotation.x = Math.random() * 2 * Math.PI; //The rotation of x is random
+                mesh.rotation.y = Math.random() * 2 * Math.PI; //The rotation of y is random
+                mesh.rotation.z = Math.random() * 2 * Math.PI; //The rotation of z is random
 
-             var randomValueX = (Math.random() * 0.01) - 0.05;
-             var randomValueY = (Math.random() * 0.01) - 0.05;
-             randomRotationX.push(randomValueX);
-             randomRotationY.push(randomValueY);
+             var randomValueX = (Math.random() * 0.01) - 0.05; //set a appropriate randomValueX
+             var randomValueY = (Math.random() * 0.01) - 0.05; //set a appropriate randomValueY
+             randomRotationX.push(randomValueX); //push randomValueX into randomRotationX
+             randomRotationY.push(randomValueY); //push randomValueY into randomRotationY
 
-
+                //add mesh in the scene
     						scene.add( mesh );
+                //push mesh in the cubes
                 cubes.push(mesh);
 
-
 }
 }
 
+//open Console to see
 console.log(cubes);
-//console.log(randomRotationX);
+//console.log(randomRotationX); //show random data
 console.log("Init end");
 console.log("****** DrawFrame Starts ******");
 document.body.appendChild(renderer.domElement);
 
-
 }
 
+//define scaleCube1, scaleCube2, scaleCube3
 var scaleCube1 = -5;
 var scaleCube2 = -5;
 var scaleCube3 = -5;
 
-
-
-
+//render loop
 function drawFrame(){
   requestAnimationFrame(drawFrame);
 
-scaleCube1 += 0.01;
+scaleCube1 += 0.01; // Start from -5 and sequentially plus 0.01 every time
 if (scaleCube1 > 3) scaleCube1 = -5;
 
-scaleCube2 += 0.01;
+scaleCube2 += 0.01; // Start from -5 and sequentially plus 0.01 every time
 if (scaleCube2 > 3) scaleCube2 = -5;
 
-scaleCube3 += 0.01;
+scaleCube3 += 0.01; // Start from -5 and sequentially plus 0.01 every time
 if (scaleCube3 > 3) scaleCube3 = -5;
 
   //forEach takes all the arrary entries and passes the c as the ...
   cubes.forEach(function(c, i){
-//for ( var i = 0; i < 1; i ++ ) {
 
-    c.rotation.x += randomRotationX[i]; //Roate the object that is reference...
-    c.rotation.y += randomRotationY[i];
-    //c.rotation.z =  rot;
-    //c.scale = rot;
+    c.rotation.x += randomRotationX[i]; //Roate the object
+    c.rotation.y += randomRotationY[i]; //Roate the object
 
-//cubes[6].rotation.x += randomRotationX[6];
-//cubes[18].rotation.x += randomRotationX[18];
-cubes[6].geometry = new THREE.SphereGeometry( 5, 10, 5 );
-cubes[6].material = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF, wireframe:true});
+    //creat a specified geometry and material
+    cubes[12].geometry = new THREE.SphereGeometry( 5, 10, 5 );
+    cubes[12].material = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF, wireframe:true});
 
-//c.rotation.x = 0.2; //Roate the object that is reference...
-//c.rotation.y = 0.5;
-//c.material = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
-c.scale.x = scaleCube1;
-c.scale.y = scaleCube2;
-c.scale.z = scaleCube3;
+    c.scale.x = scaleCube1; //give each object scale data
+    c.scale.y = scaleCube2; //give each object scale data
+    c.scale.z = scaleCube3; //give each object scale data
 
-
-//}
 });
 
+//open Console to see
 console.log(scaleCube1)
 console.log(scaleCube2)
 console.log(scaleCube3)
-
 
   renderer.render(scene, camera);
 }
