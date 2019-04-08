@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The project is an exercise which required me to creat a three dimensional grid of objects, and position them accordingly in the scene. Then the exercise also required me to make every adjacent eight objects to be one kind of color and make each object rotate in the scene.
+The project is an exercise which required me to creat a three dimensional grid of objects, and position them accordingly in the scene. Then the exercise also required me to make every adjacent eight objects to be one kind of color and make each object rotate in the scene. The difference in this time, each object not only rotates in the same direction and speed, but also becomes bigger and bigger all the time.
 
 ---
 
@@ -108,7 +108,7 @@ controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate 
   document.body.appendChild(renderer.domElement);
 ```
 
-* In the loop function, the code makes each object rotate in the same direction and speed.
+* In the loop function, the code makes each object rotate in the same direction and speed. Meanwhile, the code makes each object become bigger and bigger all the time.
 
 ```JavaScript
 // Render Loop
@@ -119,9 +119,11 @@ function drawFrame(){
 
   //forEach takes all the arrary entries and passes the c as the ...
   cubes.forEach(function(c, i){
-    c.rotation.x = rot; //Roate the object
-    c.rotation.y = rot; //Roate the object
-    c.scale = rot;
+  c.rotation.x = rot; //Roate the object
+  c.rotation.y = rot; //Roate the object
+  c.scale.x = rot; //make the scale in x direction to be bigger
+  c.scale.y = rot; //make the scale in y direction to be bigger
+  c.scale.z = rot; //make the scale in z direction to be bigger
   });
 
   renderer.render(scene, camera);
@@ -169,4 +171,5 @@ drawFrame();
   <img alt="abramovic" src="assets/object1.jpg" width="420" />
   <img alt="abramovic" src="assets/object2.jpg" width="420" />
   <img alt="abramovic" src="assets/object3.jpg" width="420" />
+  <img alt="abramovic" src="assets/object4.jpg" width="420" />
   </p>

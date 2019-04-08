@@ -95,9 +95,11 @@ function drawFrame(){
 
   //forEach takes all the arrary entries and passes the c as the ...
   cubes.forEach(function(c, i){
-    c.rotation.x = rot; //Roate the object
-    c.rotation.y = rot; //Roate the object
-    c.scale = rot;
+  c.rotation.x = rot; //Roate the object
+  c.rotation.y = rot; //Roate the object
+  c.scale.x = rot; //make the scale in x direction to be bigger
+  c.scale.y = rot; //make the scale in y direction to be bigger
+  c.scale.z = rot; //make the scale in z direction to be bigger
   });
 
   renderer.render(scene, camera);

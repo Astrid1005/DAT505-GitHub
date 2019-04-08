@@ -1,7 +1,6 @@
 var renderer, scene, camera;
 var controls;
 var cubes = [];
-var rot = 0;
 
 function init() {
 
@@ -29,62 +28,33 @@ function init() {
   renderer.setSize(W, H);
   //renderer.shadowMapEnabled = true;
 
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls = new THREE.OrbitControls(camera, renderer.domElement); //could rotate the view
 
-
-
-  /*for (var x = -47.5; x <= 47.5; x += 5 ) {// Start from -45 and sequentially add one every 5 pixels
-    for (var y = -47.5; y <= 47.5; y += 5) {
-      //for (var z = 0; z <= 15; z += 5) {
-      var boxGeometry = new THREE.BoxGeometry(3, 3, 3);
-
-//Concatenation of the x and y values (open Console to see)
-      //console.log("X:" +x+ ", Y: " +y+ ", Z: " +z);
-
-      //The color of the material is assigned a random color
-      var boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
-      var mesh = new THREE.Mesh(boxGeometry, boxMaterial);
-      //mesh.castShadow = true;
-      mesh.position.x = x;
-      //mesh.position.z = z;
-      mesh.position.y = y;
-      mesh.scale.y = 1;
-      scene.add(mesh);
-      cubes.push(mesh);
-  }
-}*/
-//}
-
-for (var x = -47.5; x <= 47.5; x += 5 ) {// Start from -45 and sequentially add one every 5 pixels
+//Create a two dimensional grid of objects, and position them accordingly
+for (var x = -47.5; x <= 47.5; x += 5 ) {// Start from -47.5 and sequentially add one every 5 pixels
   for (var y = -47.5; y <= 47.5; y += 5) {
     var boxGeometry = new THREE.BoxGeometry(3, 3, 3);
-//Concatenation of the x and y values (open Console to see)
+
+    //Concatenation of the x and y values (open Console to see)
     console.log("X:" +x+ ", Y: " +y);
+
     //The color of the material is assigned a random color
     var boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
 
-//The each cube's rotation is random
-//i < 1 is the key, but i do not know why
-//for ( var i = 0; i < 1; i ++ ) {
+              //The each cube's rotation is random
     					var mesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
-    						mesh.position.x = x;
-    						mesh.position.y = y;
+    						mesh.position.x = x; //set the mesh
+    						mesh.position.y = y; //set the mesh
 
-    						//mesh.position.z = z;
+    						mesh.rotation.x = Math.random() * 5 * Math.PI; //The rotation of x is random
+	              mesh.rotation.y = Math.random() * 5 * Math.PI; //The rotation of y is random
+    						mesh.rotation.z = Math.random() * 5 * Math.PI; //The rotation of z is random
 
-    						mesh.rotation.x = Math.random() * 5 ;//* Math.PI;
-
-    						mesh.rotation.y = Math.random() * 5 ;//* Math.PI;
-
-    						//mesh.scale.x = mesh.scale.y = Math.random() * 50 + 100;
-
-    						//mesh.matrixAutoUpdate = false;
-
-    						mesh.updateMatrix();
-    						scene.add( mesh );
+                //add mesh in the scene
+                scene.add( mesh );
+                //push mesh in the cubes
                 cubes.push(mesh);
-    					//}
 
 }
 }
@@ -93,37 +63,12 @@ console.log(cubes);
 
 document.body.appendChild(renderer.domElement);
 
-
 }
 
+// Run renderer
 function drawFrame(){
   requestAnimationFrame(drawFrame);
-//for ( var i = 0; i < 1; i ++ ) {
 
- rot += Math.random() * 0.05 * Math.PI;
-  //forEach takes all the arrary entries and passes the c as the ...
-  cubes.forEach(function(c, i){
-
-
-
-    //must relieve only one of the following rotation of x or y or z
-    //if relieve more than one rotation, the cubes won't rotate in random rotations
-    //c.rotation.x = rot; //Roate the object that is reference...
-    //c.rotation.y = rot;
-    c.rotation.z =  rot;
-    c.scale = rot;
-
-    //another kind of rotation
-    /*c.rotation.x = rot; //Roate the object that is reference...
-    c.rotation.y = rot;
-//the scale will become bigger in x or y or z
-    c.scale.x = rot;
-    c.scale.y = rot;
-    c.scale.z = rot;*/
-
-
-});
-//}
   renderer.render(scene, camera);
 }
 
