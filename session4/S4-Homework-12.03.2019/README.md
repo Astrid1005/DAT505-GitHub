@@ -85,7 +85,7 @@ console.log(cubes);
 document.body.appendChild(renderer.domElement);
 ```
 
-* In the loop function, it renders each thing.
+* In the following function, it renders each thing.
 
 ```JavaScript
 // Run renderer

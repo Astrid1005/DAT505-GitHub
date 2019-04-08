@@ -1,15 +1,15 @@
 // GLOBALS ======================================================
 var camera, scene, renderer, controls, clock;
 var INV_MAX_FPS = 1 / 100, frameDelta = 0;
-
 var floor;
 
 // SETUP ========================================================
 function setup() {
-  document.body.style.backgroundColor = '#e8e5e0';
+  document.body.style.backgroundColor = '#e8e5e0'; //The color of the scene's background
   setupThreeJS();
   setupWorld();
 
+//Update the view of the scene
   requestAnimationFrame(function animate() {
     draw();
 
@@ -25,13 +25,15 @@ function setup() {
 
 function setupThreeJS() {
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0xFFFFFF, 0.2);
+  scene.fog = new THREE.FogExp2(0xFFFFFF, 0.2); //The color of fog
 
+//creat a camera and set position of camera
   camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
   camera.position.y = 400;
   camera.position.z = 400;
   camera.rotation.x = -45 * Math.PI / 180;
 
+//render the scene
   renderer = new THREE.WebGLRenderer({antialias: true});
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.shadowMapEnabled = true;
@@ -39,6 +41,7 @@ function setupThreeJS() {
 
   document.body.appendChild( renderer.domElement );
 
+//move mouse to watch the scene in the first person view
   clock = new THREE.Clock();
   controls = new THREE.FirstPersonControls(camera);
   controls.movementSpeed = 100;
@@ -62,17 +65,15 @@ function setupWorld() {
 
   //Geometry to store all buildings of the city
   var cityGeometry = new THREE.Geometry();
-  for (var i = 0; i < 300; i++) {
+  for (var i = 0; i < 600; i++) {
     //Create geometry as a clone
     var building = new THREE.Mesh(geometry.clone());
 
     //Randomize position and scale of the buildings
     building.position.x = Math.floor( Math.random() * 200 - 100 ) * 4;
-    building.position.y = Math.floor( Math.random() * 200 - 100 ) * 4;
+    building.position.y = Math.floor( Math.random() * 600 - 100 ) * 4;
     building.position.z = Math.floor( Math.random() * 200 - 100 ) * 4;
     building.scale.x  = Math.pow(Math.random(), 2) * 50 + 10;
-    //building.scale.y  = Math.pow(Math.random(), 2) * building.scale.x * 8 + 8;
-    //building.scale.y  = Math.pow(Math.random(), 2) * building.scale.x * 5 + 5;
     building.scale.y  = building.scale.x;
     building.scale.z  = building.scale.x;
 
@@ -85,8 +86,8 @@ function setupWorld() {
   var city = new THREE.Mesh(cityGeometry, material);
 
   //Cast shadows of the models
-  //city.castShadow = true;
-  //city.receiveShadow = true;
+  city.castShadow = true;
+  city.receiveShadow = true;
   scene.add(city);
 
   //Create the lighting system and add to the scene
