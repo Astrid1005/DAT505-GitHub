@@ -2,7 +2,6 @@
 var camera, scene, renderer, geometry, material, mesh;
 var texture;
 var cubesNum = 10;
-
 var cubes = [];
 var speed = [];
 
@@ -18,10 +17,7 @@ function init() {
 		var randomValue = Math.random() * 0.5;
 		speed.push(randomValue);
 
-		var randomSelection = Math.round(Math.random()*15) + 1;
-
-
-	// Load a texture
+	// Load random texture
 	texture = new THREE.TextureLoader().load("textures/texture" + Math.floor(Math.random()*10) + ".jpg");
 
 	// Create a MeshBasicMaterial with a loaded texture
@@ -32,9 +28,11 @@ function init() {
 	// Combine the geometry and material into a mesh
 	mesh = new THREE.Mesh( geometry, material );
 
+//random position
 	mesh.position.y = (Math.random()*30) - 15;
 	mesh.position.x = (Math.random()*30) - 15;
 
+//random scale
 	mesh.scale.x = Math.random();
 	mesh.scale.y = Math.random();
 	mesh.scale.z = Math.random();
@@ -43,6 +41,7 @@ function init() {
 	scene.add( mesh );
 	cubes.push( mesh );
 }
+
 	// Create a camera
 	// 	Set a Field of View (FOV) of 75 degrees
 	// 	Set an Apsect Ratio of the inner width divided by the inner height of the window
@@ -80,12 +79,11 @@ function animate() {
 		if (cubes[i].position.y <- 30){
 			cubes[i].position.y = 35;
 			cubes[i].position.x = (Math.random() * -20) +10;
-      cubes[i].scale.x = Math.random();
-			cubes[i].scale.y = Math.random();
-			cubes[i].scale.z = Math.random();
+      //cubes[i].scale.x = Math.random();
+			//cubes[i].scale.y = Math.random();
+			//cubes[i].scale.z = Math.random();
 
 	}
-
 
 	}
 
