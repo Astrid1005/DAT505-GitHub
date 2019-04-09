@@ -5,13 +5,8 @@ var camera, scene, renderer;
 var image;
 var mouseX = 0, mouseY = 0;
 var container, stats;
-
 var cubesNum = 10;
 var cubes = [];
-//var eyeRotationX = [];
-//var eyeRotationY = [];
-
-
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 
@@ -52,20 +47,15 @@ function init() {
 		}
 	}
 
-
-
   //mesh = new THREE.Mesh( geometry, material );
 	var eyeGeometry = new THREE.Geometry();
 for (var i = 0; i < 5; i++) {
+
 	var mesh = new THREE.Mesh(geometry.clone());
+
 	mesh.position.x = (Math.random() * 100) - 50;
 	mesh.position.y = (Math.random() * 100) - 50;
 	mesh.position.z = (Math.random() * 100) - 50;
-
-	//var eyeValueX = mouseY/window.innerHeight*2;
-	//var eyeValueY = mouseX/window.innerWidth*2;
-
-
 
 	mesh.scale.x = Math.random();
 	mesh.scale.y = mesh.scale.x;
@@ -107,31 +97,14 @@ function animate() {
 function render() {
 	//console.log(window.innerHeight)
 
-
 cubes.forEach(function(c, i){
+
 	c.rotation.x = mouseY/window.innerHeight*2;
 	c.rotation.y = mouseX/window.innerWidth*2;
-
-	//c.rotation.x = eyeValueX;
-	//c.rotation.y = eyeValueY;
-
-	//c.rotation.x = eyeRotationX[i];
-	//c.rotation.y = eyeRotationY[i];
-
-	//c.rotation.x = (mouseY+c.position.y)/(window.innerHeight+c.position.y)*2;
-	//c.rotation.y = (mouseX+c.position.x)/(window.innerWidth+c.position.x)*2;
-
-	/*if (c.position.y < mouseY){
-
-		c.rotation.x = mouseY/window.innerHeight*2;
-		c.rotation.y = mouseX/window.innerWidth*2;
-
-}*/
 
 });
 
 	renderer.render( scene, camera );
-
 //console.log(window.innerHeight);
 //console.log(window.innerWidth);
 
