@@ -50,7 +50,7 @@ document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 window.addEventListener( 'resize', onWindowResize, false );
 ```
 
-* The following code creates material for SphereGeometry firstly. Secondly, the code set the data of the texture. Thirdly, the code creates mesh to combine the geometry with material, meanwhile clones some and set their position and scale. Fourthly, the code creats **eye** to combine eyeGeometry and material. Finally, the code adds eye to the scene and push eye to **cubes**.
+* The following code creates material for SphereGeometry firstly. Secondly, the code sets the data of the texture. Thirdly, the code creates mesh to combine the geometry with material, meanwhile clones some and set their position and scale. Fourthly, the code creats **eye** to combine eyeGeometry and material. Finally, the code adds eye to the scene and push eye to **cubes**.
 
 ```JavaScript
 var material = new THREE.MeshPhongMaterial( {
