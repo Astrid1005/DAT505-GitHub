@@ -10,6 +10,6 @@ The project is an exercise which required me to give each ship random vioce when
 
 * S9-02-exercise-PostProcessing-Glitch
 
-The project is an exercise which required me to make each sprite's color could be change when the mouse moves on the sprite.
+The project is an exercise which required me to change effects for the scene.
 
 ---

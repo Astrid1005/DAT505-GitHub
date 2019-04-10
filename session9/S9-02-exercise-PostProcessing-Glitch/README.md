@@ -1,8 +1,8 @@
-# An exercise which shows many towers in the scene.
+# An exercise which shows some geometry and special effects in the scene.
 
 ## Introduction
 
-The project is an exercise which required me to make each object's color could be change by mouse clicking. The material and object are loaded from other folder in the project. The object model was made by me.
+The project is an exercise which required me to change effects for the scene.
 
 ---
 
@@ -14,145 +14,177 @@ The project is an exercise which required me to make each object's color could b
 
 ```JavaScript
 // GLOBALS ======================================================
-var container, stats;
-var camera, scene, raycaster, renderer;
+var renderer, scene, camera, composer, planetMesh, skeletonMesh, particleMesh;
+var effectGlitch, effectRGB, motion1, motion2;
+var kaleidoParams, kaleidoPass;
+var rgbPass, rgbParams;
+var t1 = 0;
+var t2 = 0;
+var t3 = 0;
 
-var mouse = new THREE.Vector2(), INTERSECTED;
-var radius = 100, theta = 0;
-var object;
-
-var objects = [];
+var glitchPass;
 ```
 
-* The following code creats a scene, a camera, container, light.
+* The following code creats a scene, a camera, renderer.
 
 ```JavaScript
-container = document.createElement( 'div' );
-document.body.appendChild( container );
-
-camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
+renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.autoClear = false;
+renderer.setClearColor(0x000000, 0.0);
+document.getElementById('canvas').appendChild(renderer.domElement);
 
 scene = new THREE.Scene();
-scene.background = new THREE.Color( 0xf0f0f0 );
 
-var light = new THREE.DirectionalLight( 0xffffff, 1 );
-light.position.set( 1, 1, 1 ).normalize();
-scene.add( light );
+camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+camera.position.z = 400;
+scene.add(camera);
 ```
 
-* The following code creates material and geometry, meanwhile it loads **Blocks.mtl** and **Tower.obj** firstly. Secondly, the code creats mesh to combin material and geometry, meanwhile it sets scale, position, rotation of the mesh. Fourthly, the code adds mesh to scene and push mesh to **object**. Fifthly, the code creats raycaster and renderer.
+* The following code creates planetObject, skeletonObject, particlesObject and adds them to scene firstly. Secondly, the code creats particlesGeometry, planetGeometry, skeletonGeometry and particlesMaterial. Thirdly, the code sets their position and creats mesh to combin geometry and material. Fourthly, the code creats lights to render objects in the scene. Finally, the code creats special effects for the scene.
 
 ```JavaScript
-var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+planetObject = new THREE.Object3D();
+skeletonObject = new THREE.Object3D();
+particlesObject = new THREE.Object3D();
 
-for (var i=0; i<100; i++){
+scene.add(planetObject);
+scene.add(skeletonObject);
+scene.add(particlesObject);
 
-// Model/material loading!
-var mtlLoader = new THREE.MTLLoader();
-mtlLoader.load("Blocks.mtl", function(materials){
+var particlesGeometry = new THREE.TetrahedronGeometry(2, 0);
+var planetGeometry = new THREE.IcosahedronGeometry(7, 1);
+var skeletonGeometry = new THREE.IcosahedronGeometry(15, 1);
 
-  materials.preload();
+var particlesMaterial = new THREE.MeshPhongMaterial({
+  color: 0xffffff,
+  shading: THREE.FlatShading
+});
 
-  var objLoader = new THREE.OBJLoader();
-  objLoader.setMaterials(materials);
-
-    objLoader.load("Tower.obj", function(mesh){
-      mesh.traverse(function(node){
-        if( node instanceof THREE.Mesh ){
-          node.castShadow = true;
-          node.receiveShadow = true;
-        }
-      });
-      var sizeRand = Math.random() * 100;
-      mesh.scale.set(sizeRand,sizeRand,sizeRand);
-      mesh.position.set(Math.random()*800-400, Math.random()*800-400, Math.random()*800-400);
-      mesh.rotation.y = -Math.PI/Math.random()*4;
-
-      scene.add(mesh);
-      objects.push(mesh); //Add to the array so that we can access for raycasting
-    });
-  });
+for (var i = 0; i < 1500; i++) {
+  var particlesMesh = new THREE.Mesh(particlesGeometry, particlesMaterial);
+  particlesMesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
+  particlesMesh.position.multiplyScalar(1 + (Math.random() * 700));
+  particlesMesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
+  var randScale = Math.random() * 5;
+  particlesMesh.scale.set(randScale, randScale, randScale);
+  particlesObject.add(particlesMesh);
 }
 
-raycaster = new THREE.Raycaster();
+var planetMaterial = new THREE.MeshPhongMaterial({
+  color: 0xffffff,
+  shading: THREE.FlatShading
+});
 
-renderer = new THREE.WebGLRenderer();
-renderer.setPixelRatio( window.devicePixelRatio );
-renderer.setSize( window.innerWidth, window.innerHeight );
-container.appendChild( renderer.domElement );
+var planetMesh = new THREE.Mesh(planetGeometry, planetMaterial);
+planetMesh.scale.x = planetMesh.scale.y = planetMesh.scale.z = 16;
+planetObject.add(planetMesh);
 
-//stats = new Stats();
-//container.appendChild( stats.dom );
-document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-window.addEventListener( 'resize', onWindowResize, false );
+var skeletonMaterial = new THREE.MeshPhongMaterial({
+  color: 0xffffff,
+  wireframe: true,
+  side: THREE.DoubleSide
+});
+
+var skeletonMesh = new THREE.Mesh(skeletonGeometry, skeletonMaterial);
+skeletonMesh.scale.x = skeletonMesh.scale.y = skeletonMesh.scale.z = 10;
+skeletonObject.add(skeletonMesh);
+
+var ambientLight = new THREE.AmbientLight(0x999999 );
+scene.add(ambientLight);
+
+var lights = [];
+lights[0] = new THREE.DirectionalLight( 0xffffff, 0.2 );
+lights[0].position.set( 1, 2, -0.5);
+lights[1] = new THREE.DirectionalLight( 0x11E8BB, 0.3 );
+lights[1].position.set( 1, -1, 0.5 );
+lights[2] = new THREE.DirectionalLight( 0x8200C9, 0.7 );
+lights[2].position.set( -1., -1, -0.1 );
+lights[3] = new THREE.DirectionalLight( 0x8200C9, 0.8 );
+lights[3].position.set( -1., 2, -1 );
+scene.add( lights[0] );
+scene.add( lights[1] );
+scene.add( lights[2] );
+scene.add( lights[3] );
+
+composer = new THREE.EffectComposer( renderer );
+//composer.addPass( new THREE.RenderPass( scene, camera ) );
+var renderPass = new THREE.RenderPass(scene, camera);
+
+/*rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
+//rgbPass.uniforms[ 'amount' ].value = 0.005;
+//rgbPass.renderToScreen = true;
+composer.addPass ( renderPass );
+composer.addPass ( rgbPass );*/
+
+rgbPass = new THREE.ShaderPass( THREE.FXAAShader);
+//rgbPass.uniforms[ 'amount' ].value = 0.005;
+//rgbPass.renderToScreen = true;
+composer.addPass ( renderPass );
+composer.addPass ( rgbPass );
+
+kaleidoPass = new THREE.ShaderPass (THREE.ToneMapShader);
+composer.addPass ( kaleidoPass );
+
+var glitchPass = new THREE.GlitchPass();
+glitchPass.renderToScreen = true;
+composer.addPass( glitchPass );
+
+rgbParams = {
+  amount: 0.5,
+  angle: 0.0
+}
+
+kaleidoParams = {
+  sides: 2,
+  angle: 0.0
+}
+
+  window.addEventListener('resize', onWindowResize, false);
 ```
 
-* In the following functions, it renders each thing and make object can be changed color by mouse clicking.
+* In the following functions, it renders each thing.
 
 ```JavaScript
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  composer.setSize( window.innerWidth, window.innerHeight );
 }
 
-function onDocumentMouseDown( event ) {
-  event.preventDefault();
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-}
+var reset = 0;
 
-function animate() {
-  requestAnimationFrame( animate );
+function animate(ts) {
+  requestAnimationFrame(animate);
+  //var delta = clock.getDelta()
 
-  render();
-  //stats.update();
-}
+  particlesObject.rotation.x += 0.0000;
+  particlesObject.rotation.y -= 0.0040;
+  planetObject.rotation.x -= 0.0020;
+  planetObject.rotation.y -= 0.0030;
+  skeletonObject.rotation.x -= 0.0010;
+  skeletonObject.rotation.y += 0.0020;
+  //renderer.clear();
 
-function render() {
-  //Auto rotate camera
-  theta += 0.1;
-  camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
-  camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
-  camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
-  camera.lookAt( scene.position );
-  camera.updateMatrixWorld();
-
-  //Find intersections
-  raycaster.setFromCamera( mouse, camera );
-  //var intersects = raycaster.intersectObjects( scene.children );
-
-  var intersects = raycaster.intersectObjects( objects, true );
-
-  if ( intersects.length > 0 ) {
-    if ( INTERSECTED != intersects[ 0 ].object ) {
-      if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-      //if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( Math.random() * 0xFFFFFF );
-      INTERSECTED = intersects[ 0 ].object;
-      INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-      //INTERSECTED.material.emissive.setHex( 0xff0000 );
-      INTERSECTED.material.emissive.setHex( Math.random() * 0xFFFFFF );
-      //INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-    }
-  } else {
-    //if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-    if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( Math.random() * 0xFFFFFF );
-    INTERSECTED = null;
-  }
-  renderer.render( scene, camera );
-}
+  //renderer.render( scene, camera )
+  composer.render(0.1);
+};
 ```
 
 * Run function render
 
 ```JavaScript
-init();
-animate();
+window.onload = function() {
+  init();
+  animate();
+}
 ```
 
 #### This part explains the code used for the **index.html**
 
-* The following code imports **three.js** and **index.js** and **OrbitControls.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.js** and **OrbitControls.js** are found in the **Library**.
+* The following code imports **three.js** and **index.js** and **/OBJLoader.js** and **MTLLoader.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.js** and **OBJLoader.js** and **MTLLoader.js** are found in the **Library**.
 
 ```JavaScript
 <!DOCTYPE html>
@@ -183,6 +215,6 @@ animate();
 
 ## The final general view of code
   <p align="center">
-  <img alt="abramovic" src="assets/tower.jpg" width="420" />
-  <img alt="abramovic" src="assets/tower2.jpg" width="420" />
+  <img alt="abramovic" src="assets/effect1.jpg" width="420" />
+  <img alt="abramovic" src="assets/effect2.jpg" width="420" />
   </p>
