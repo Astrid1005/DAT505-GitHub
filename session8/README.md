@@ -4,13 +4,13 @@
 
 * S8-00-example-Eyes-Interaction
 
-
+The project is an example which shows that some eyes appear in the scene. Eyes can rotate themselves follow the mouse.
 
 ---
 
 * S8-01-exercise-RaycastSprite-21.03.19
 
-
+The project is an exercise which required me to make each sprite's color could be change when the mouse moves on the sprite.
 
 ---
 

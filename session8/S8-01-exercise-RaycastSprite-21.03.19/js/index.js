@@ -54,7 +54,6 @@ function init() {
 
   window.addEventListener( 'resize', onWindowResize, false );
   window.addEventListener( "mousemove", onDocumentMouseMove, false );
-  window.addEventListener( "mousedown", onDocumentMouseDown, false );
 
 }
 
@@ -69,30 +68,10 @@ function onWindowResize() {
   renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
-function onDocumentMouseDown( event ) {
-  event.preventDefault();
-  if ( selectedObject ) {
-    selectedObject.material.color.set( '#69f' );
-    selectedObject = null;
-  }
-
-  var intersects = getIntersects( event.layerX, event.layerY );
-  if ( intersects.length > 0 ) {
-    var res = intersects.filter( function ( res ) {
-      return res && res.object;
-    } )[ 0 ];
-    if ( res && res.object ) {
-      selectedObject = res.object;
-      console.log(selectedObject.scale);
-    }
-  }
-}
-
-
 function onDocumentMouseMove( event ) {
   event.preventDefault();
   if ( selectedObject ) {
-    //selectedObject.material.color.set( '#69f' );
+    
     selectedObject = null;
   }
 
