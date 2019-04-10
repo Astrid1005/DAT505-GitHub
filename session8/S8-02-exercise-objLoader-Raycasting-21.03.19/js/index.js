@@ -36,14 +36,14 @@ function init() {
     var objLoader = new THREE.OBJLoader();
 		objLoader.setMaterials(materials);
 
-  		objLoader.load("tree.obj", function(mesh){
+  		objLoader.load("Tower.obj", function(mesh){
   			mesh.traverse(function(node){
   				if( node instanceof THREE.Mesh ){
   					node.castShadow = true;
   					node.receiveShadow = true;
   				}
   			});
-        var sizeRand = Math.random() * 100;
+        var sizeRand = Math.random() * 1;
         mesh.scale.set(sizeRand,sizeRand,sizeRand);
         mesh.position.set(Math.random()*800-400, Math.random()*800-400, Math.random()*800-400);
         mesh.rotation.y = -Math.PI/Math.random()*4;
@@ -79,14 +79,12 @@ function onDocumentMouseDown( event ) {
   mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
 
-//
 function animate() {
   requestAnimationFrame( animate );
 
   render();
   //stats.update();
 }
-
 
 
 function render() {
