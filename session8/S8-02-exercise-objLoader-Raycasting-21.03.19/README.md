@@ -40,7 +40,7 @@ light.position.set( 1, 1, 1 ).normalize();
 scene.add( light );
 ```
 
-* The following code creates material and geometry, meanwhile it loads **Blocks.mtl** and **Tower.obj** firstly. Secondly, the code creats mesh to combin material and geometry, meanwhile it sets scale, position, rotation of the mesh. Fourthly, the code adds mesh to scene and push mesh to **object**. Fifthly, the code creats raycaster and renderer.
+* The following code creates material and geometry, meanwhile it loads **Blocks.mtl** and **Tower.obj** firstly. Secondly, the code creats mesh to combin material and geometry, meanwhile it sets scale, position, rotation of the mesh. Thirdly, the code adds mesh to scene and push mesh to **object**. Finally, the code creats raycaster and renderer.
 
 ```JavaScript
 var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
@@ -152,7 +152,7 @@ animate();
 
 #### This part explains the code used for the **index.html**
 
-* The following code imports **three.js** and **index.js** and **OrbitControls.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.js** and **OrbitControls.js** are found in the **Library**.
+* The following code imports **three.js** and **index.js** and **OBJLoader.js** and **MTLLoader.js**. For this project, a few dependencies are needed, which can be found in the folder named **libraries**. The **three.js** and **OBJLoader.js** and **MTLLoader.js** are found in the **Library**.
 
 ```JavaScript
 <!DOCTYPE html>

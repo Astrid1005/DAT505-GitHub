@@ -37,15 +37,8 @@ function init() {
 
   var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
 
-  /*var audioLoader = new THREE.AudioLoader();
-    audioLoader.load( "audio/music" + Math.floor(Math.random()*1) + ".mp3", function( buffer ) {
-    sound.setBuffer( buffer );
-    sound.setLoop( false );
-    sound.setVolume( 0.5 );
-    sound.play();
-  });*/
   var audioLoader = new THREE.AudioLoader();
-    audioLoader.load( "audio/music0.mp3", function( buffer ) {
+    audioLoader.load( "audio/music" + Math.floor(Math.random()*2) + ".mp3", function( buffer ) {
     sound.setBuffer( buffer );
     sound.setLoop( false );
     sound.setVolume( 0.5 );
@@ -135,7 +128,7 @@ function render() {
       INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
       INTERSECTED.material.emissive.setHex( 0xff0000 );
 
-      audioLoader.load( "audio/music0.mp3", function( buffer ) {
+        audioLoader.load( "audio/music" + Math.floor(Math.random()*2) + ".mp3", function( buffer ) {
         sound.setBuffer( buffer );
         sound.setLoop( false );
         sound.setVolume( 0.5 );
