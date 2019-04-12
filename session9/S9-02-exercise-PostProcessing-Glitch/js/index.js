@@ -101,12 +101,14 @@ function init() {
   //composer.addPass( new THREE.RenderPass( scene, camera ) );
   var renderPass = new THREE.RenderPass(scene, camera);
 
+//here to change effect
   rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
   //rgbPass.uniforms[ 'amount' ].value = 0.005;
   //rgbPass.renderToScreen = true;
   composer.addPass ( renderPass );
   composer.addPass ( rgbPass );
 
+//here to change effect
   kaleidoPass = new THREE.ShaderPass (THREE.KaleidoShader);
   composer.addPass ( kaleidoPass );
 
