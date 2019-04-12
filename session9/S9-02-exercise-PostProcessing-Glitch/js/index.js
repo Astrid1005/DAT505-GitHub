@@ -81,6 +81,7 @@ function init() {
   var ambientLight = new THREE.AmbientLight(0x999999 );
   scene.add(ambientLight);
 
+//set color and position of light
   var lights = [];
   lights[0] = new THREE.DirectionalLight( 0xC78A77, 0.6 );
   lights[0].position.set( 1, 2, -0.5);
