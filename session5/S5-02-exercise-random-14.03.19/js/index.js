@@ -50,7 +50,11 @@ if (x==-5 && y==-5){
   boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
 } else if (x==5 && y==5){
   boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
-} else {
+} else if (x==10 && y==-10){
+  boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
+}  else if (x==-10 && y==10){
+  boxMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
+}  else {
   boxMaterial = new THREE.MeshLambertMaterial({color:  0xFFFFFF});
 }
 
@@ -99,6 +103,13 @@ cubes[6].rotation.y += randomRotationY[6]; //Roate the special objects
 
 cubes[18].rotation.x += randomRotationX[18]; //Roate the special object
 cubes[18].rotation.y += randomRotationY[18]; //Roate the special object
+
+cubes[4].rotation.x += randomRotationX[6]; //Roate the special object
+cubes[4].rotation.y += randomRotationY[6]; //Roate the special objects
+
+cubes[20].rotation.x += randomRotationX[6]; //Roate the special object
+cubes[20].rotation.y += randomRotationY[6]; //Roate the special objects
+
 
 });
 
