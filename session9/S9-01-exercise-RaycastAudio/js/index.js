@@ -35,8 +35,7 @@ function init() {
   light.position.set( 1, 1, 1 ).normalize();
   scene.add( light );
 
-  var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
-
+  //set audioLoader to load random music
   var audioLoader = new THREE.AudioLoader();
     audioLoader.load( "audio/music" + Math.floor(Math.random()*2) + ".mp3", function( buffer ) {
     sound.setBuffer( buffer );
