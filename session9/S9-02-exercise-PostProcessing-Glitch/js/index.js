@@ -60,7 +60,7 @@ function init() {
   }
 
   var planetMaterial = new THREE.MeshPhongMaterial({
-    color: 0xffffff,
+    color: 0x9E8B8E,
     shading: THREE.FlatShading
   });
 
@@ -69,7 +69,7 @@ function init() {
   planetObject.add(planetMesh);
 
   var skeletonMaterial = new THREE.MeshPhongMaterial({
-    color: 0xffffff,
+    color: 0xFFCC7B,
     wireframe: true,
     side: THREE.DoubleSide
   });
@@ -82,13 +82,13 @@ function init() {
   scene.add(ambientLight);
 
   var lights = [];
-  lights[0] = new THREE.DirectionalLight( 0xffffff, 0.2 );
+  lights[0] = new THREE.DirectionalLight( 0xC78A77, 0.6 );
   lights[0].position.set( 1, 2, -0.5);
-  lights[1] = new THREE.DirectionalLight( 0x11E8BB, 0.3 );
+  lights[1] = new THREE.DirectionalLight( 0xB8C43A, 0.3 );
   lights[1].position.set( 1, -1, 0.5 );
-  lights[2] = new THREE.DirectionalLight( 0x8200C9, 0.7 );
+  lights[2] = new THREE.DirectionalLight( 0xE65454, 0.7 );
   lights[2].position.set( -1., -1, -0.1 );
-  lights[3] = new THREE.DirectionalLight( 0x8200C9, 0.8 );
+  lights[3] = new THREE.DirectionalLight( 0xBF794E, 0.8 );
   lights[3].position.set( -1., 2, -1 );
   scene.add( lights[0] );
   scene.add( lights[1] );
@@ -100,19 +100,13 @@ function init() {
   //composer.addPass( new THREE.RenderPass( scene, camera ) );
   var renderPass = new THREE.RenderPass(scene, camera);
 
-  /*rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
-  //rgbPass.uniforms[ 'amount' ].value = 0.005;
-  //rgbPass.renderToScreen = true;
-  composer.addPass ( renderPass );
-  composer.addPass ( rgbPass );*/
-
-  rgbPass = new THREE.ShaderPass( THREE.FXAAShader);
+  rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
   //rgbPass.uniforms[ 'amount' ].value = 0.005;
   //rgbPass.renderToScreen = true;
   composer.addPass ( renderPass );
   composer.addPass ( rgbPass );
 
-  kaleidoPass = new THREE.ShaderPass (THREE.ToneMapShader);
+  kaleidoPass = new THREE.ShaderPass (THREE.KaleidoShader);
   composer.addPass ( kaleidoPass );
 
   var glitchPass = new THREE.GlitchPass();

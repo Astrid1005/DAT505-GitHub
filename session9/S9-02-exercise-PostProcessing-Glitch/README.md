@@ -108,23 +108,18 @@ scene.add( lights[1] );
 scene.add( lights[2] );
 scene.add( lights[3] );
 
+// postprocessing
 composer = new THREE.EffectComposer( renderer );
 //composer.addPass( new THREE.RenderPass( scene, camera ) );
 var renderPass = new THREE.RenderPass(scene, camera);
 
-/*rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
-//rgbPass.uniforms[ 'amount' ].value = 0.005;
-//rgbPass.renderToScreen = true;
-composer.addPass ( renderPass );
-composer.addPass ( rgbPass );*/
-
-rgbPass = new THREE.ShaderPass( THREE.FXAAShader);
+rgbPass = new THREE.ShaderPass( THREE.HueSaturationShader);
 //rgbPass.uniforms[ 'amount' ].value = 0.005;
 //rgbPass.renderToScreen = true;
 composer.addPass ( renderPass );
 composer.addPass ( rgbPass );
 
-kaleidoPass = new THREE.ShaderPass (THREE.ToneMapShader);
+kaleidoPass = new THREE.ShaderPass (THREE.KaleidoShader);
 composer.addPass ( kaleidoPass );
 
 var glitchPass = new THREE.GlitchPass();
@@ -217,4 +212,6 @@ window.onload = function() {
   <p align="center">
   <img alt="abramovic" src="assets/effect1.jpg" width="420" />
   <img alt="abramovic" src="assets/effect2.jpg" width="420" />
+  <img alt="abramovic" src="assets/effect3.jpg" width="420" />
+  <img alt="abramovic" src="assets/effect4.jpg" width="420" />
   </p>
