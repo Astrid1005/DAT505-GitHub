@@ -55,8 +55,8 @@ function init() {
 	for (var i = 0; i < eyesNum; i++) {
 		mesh = new THREE.Mesh( geometry, material );
 
-		xPos[i] = Math.random() * 100 - 50;
-		yPos[i] = Math.random() * 100 - 50;
+		//xPos[i] = Math.random() * 100 - 50;
+		//yPos[i] = Math.random() * 100 - 50;
 
 		xPos [0] = 0;
 		yPos [0] = 0;
@@ -80,6 +80,8 @@ function init() {
 
 		mesh.position.x = xPos[i];
 		mesh.position.y = yPos[i];
+
+		console.log(xPos [i]);
 
 		var randSize = Math.random() * 0.8;
 		mesh.scale.x = randSize;
@@ -113,8 +115,8 @@ function render() {
 		eyes[0].rotation.y = map_range(mouseX, 0, window.innerWidth, -1.14, 1.14);
 		eyes[0].rotation.x = map_range(mouseY, 0, window.innerHeight, -1.14, 1.14);
 
-		if (mouseX<140) eyes[1].rotation.y = map_range(mouseX, 0, 140, -0.2, 0.25);
-		else eyes[1].rotation.y = map_range(mouseX, 140, window.innerWidth, 0.25, 1.14);
+		if (mouseX<640) eyes[1].rotation.y = map_range(mouseX, 0, 640, -0.2, 0.25);
+		else eyes[1].rotation.y = map_range(mouseX, 640, window.innerWidth, 0.25, 1.14);
 		if (mouseY<810) eyes[1].rotation.x = map_range(mouseY, 0, 810, -1.14, -0.25);
 		else eyes[1].rotation.x = map_range(mouseY, 810, window.innerHeight, -0.25, 0);
 
